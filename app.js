@@ -21,7 +21,7 @@ function domainList() {
       }
     }
   }
-  return domainNames.join(", ");
+  return domainNames.join("\n");
 }
 
-console.log("Generated Domain Names: " + domainList());
+console.log("Generated Domain Names: \n" + domainList());
