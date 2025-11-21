@@ -11,10 +11,10 @@ function domainList() {
       for (const adjective of adjectives) {
         let shortAdjective = adjective.slice(0, -2);
         for (const domainExt of domainExtensions) {
-          if (adjective.endsWith("es") && domainExt == ".es") {
-            domain = pronoun + noun + shortAdjective + domainExt;
-            domainNames.push(domain);
-          } else if (adjective.endsWith("ar") && domainExt == ".ar") {
+          if (
+            (adjective.endsWith("es") && domainExt == ".es") ||
+            (adjective.endsWith("ar") && domainExt == ".ar")
+          ) {
             domain = pronoun + noun + shortAdjective + domainExt;
             domainNames.push(domain);
           } else {
