@@ -3,11 +3,6 @@ const noun = ["cloud", "byte", "node", "data"];
 const adjective = ["bold", "brightes", "swiftar", "clever"];
 const domainExtensions = [".com", ".io", ".net", ".ch", ".ar", ".es"];
 
-function getRandomPart(array) {
-  const randomIndex = Math.floor(Math.random() * array.length);
-  return array[randomIndex];
-}
-
 function domainList() {
   let domain = "";
   const domainNames = [];
