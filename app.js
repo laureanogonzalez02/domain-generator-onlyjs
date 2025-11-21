@@ -1,17 +1,26 @@
-const pronoun = ["my", "your", "our", "this", "that"];
-const noun = ["cloud", "byte", "node", "data"];
-const adjective = ["bold", "brightes", "swiftar", "clever"];
+const pronouns = ["my", "your", "our", "this", "that"];
+const nouns = ["cloud", "byte", "node", "data"];
+const adjectives = ["bold", "brightes", "swiftar", "clever"];
 const domainExtensions = [".com", ".io", ".net", ".ch", ".ar", ".es"];
 
 function domainList() {
   let domain = "";
   const domainNames = [];
-  for (const p of pronoun) {
-    for (const n of noun) {
-      for (const a of adjective) {
-        for (const d of domainExtensions) {
-          domain = p + n + a + d;
-          domainNames.push(domain);
+  for (const pronoun of pronouns) {
+    for (const noun of nouns) {
+      for (const adjective of adjectives) {
+        let shortAdjective = adjective.slice(0, -2);
+        for (const domainExt of domainExtensions) {
+          if (adjective.endsWith("es") && domainExt == ".es") {
+            domain = pronoun + noun + shortAdjective + domainExt;
+            domainNames.push(domain);
+          } else if (adjective.endsWith("ar") && domainExt == ".ar") {
+            domain = pronoun + noun + shortAdjective + domainExt;
+            domainNames.push(domain);
+          } else {
+            domain = pronoun + noun + adjective + domainExt;
+            domainNames.push(domain);
+          }
         }
       }
     }
